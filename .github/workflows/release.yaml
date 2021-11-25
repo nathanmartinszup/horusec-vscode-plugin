@@ -100,6 +100,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.HORUSEC_PUSH_TOKEN }}
           HORUSEC_VSCODE_VERSION: ${{ steps.updated-version.outputs.nextReleaseVersion }}
 
+      # Publish the release and tag using mage
+      - name: Push All
+        run: mage GitPushAll
+
       # This step gets the sha of last commit made, witch is the updating versioning files commit, after that creates a
       # branch from the origin main and cherry pick this commit on it. This process need to occur only when the release
       # workflow is started from a branch that isn't the main branch, for example a release branch.
