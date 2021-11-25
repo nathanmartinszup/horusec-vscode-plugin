@@ -15,7 +15,7 @@
 //go:build mage
 // +build mage
 
-package mage
+package main
 
 import (
 	"context"
