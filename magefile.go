@@ -88,6 +88,7 @@ func getRepositoryRelease() *github.RepositoryRelease {
 	return &github.RepositoryRelease{
 		Draft:   getDraft(),
 		TagName: getTagName(),
+		Name:    getTagName(),
 	}
 }
 
