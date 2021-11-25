@@ -120,3 +120,4 @@ jobs:
           HORUSEC_REPOSITORY_ORG: ${{ github.repository_owner }}
           HORUSEC_REPOSITORY_NAME: ${{ github.event.repository.name }}
           GITHUB_TOKEN: ${{ secrets.HORUSEC_PUSH_TOKEN }}
+          HORUSEC_VSCODE_VERSION: ${{ steps.updated-version.outputs.nextReleaseVersion }}
