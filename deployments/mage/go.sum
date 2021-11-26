@@ -2,6 +2,8 @@ github.com/ZupIT/horusec-devkit v1.0.20-0.20211123113450-7a39e9acf0bb h1:we0cC6O
 github.com/ZupIT/horusec-devkit v1.0.20-0.20211123113450-7a39e9acf0bb/go.mod h1:OyD/c5VGmmIxZamErINJJZ3ZFVFQJKRnh6/5a69n1J4=
 github.com/ZupIT/horusec-devkit v1.0.20-0.20211126131753-c76882361081 h1:pA4Bfz5C2MVBClhtf12iDWRjp9XlUQ5Am+PPX47LTS8=
 github.com/ZupIT/horusec-devkit v1.0.20-0.20211126131753-c76882361081/go.mod h1:OyD/c5VGmmIxZamErINJJZ3ZFVFQJKRnh6/5a69n1J4=
+github.com/ZupIT/horusec-devkit v1.0.20-0.20211126145754-05f9df864948 h1:eee6u13BDjynRXSRnKDRLwzq/wzLWBfqw6yBkoiuWKM=
+github.com/ZupIT/horusec-devkit v1.0.20-0.20211126145754-05f9df864948/go.mod h1:OyD/c5VGmmIxZamErINJJZ3ZFVFQJKRnh6/5a69n1J4=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/golang/protobuf v1.3.1/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/golang/protobuf v1.3.2/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
