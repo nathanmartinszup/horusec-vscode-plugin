@@ -55,13 +55,13 @@ jobs:
       - name: Compile Mage
         run: cd deployments/mage/ && mage -compile /home/runner/go/bin/mage-vscode
 
-      # - name: Import GPG key
-      #   uses: crazy-max/ghaction-import-gpg@v4
-      #   with:
-      #     gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-      #     passphrase: ${{ secrets.PASSPHRASE }}
-      #     git_user_signingkey: true
-      #     git_commit_gpgsign: true
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v4
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
 
       # Run a script contained in the devkit repository that gets the latest release version and create an output
       # containing the next versions.
@@ -91,10 +91,10 @@ jobs:
         with:
           push: true
           signoff: true
-          author_name: horusec
+          author_name: Horusec
           branch: ${{ steps.updated-version.outputs.nextReleaseBranchName }}
           author_email: horusec@zup.com.br
-          committer_name: horusec
+          committer_name: Horusec
           committer_email: horusec@zup.com.br
           message: "versioning:release - [skip ci] automatic commit updating versioning files"
 
