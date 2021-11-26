@@ -51,6 +51,7 @@ jobs:
       - name: Install Mage
         run: go install github.com/magefile/mage@v1.11
 
+      # Compile a binary from the mage file and move it to the workflow go bin.
       - name: Compile Mage
         run: cd deployments/mage/ && mage -compile /home/runner/go/bin/mage-vscode
 
@@ -71,6 +72,7 @@ jobs:
           HORUSEC_REPOSITORY_ORG: ${{ github.repository_owner }}
           HORUSEC_REPOSITORY_NAME: ${{ github.event.repository.name }}
 
+      # Checkout into the release branch, if not exist create one.
       - name: Checkout Release Branch
         run: mage-vscode CheckoutReleaseBranch ${{ steps.updated-version.outputs.nextReleaseBranchName }}
 
@@ -96,6 +98,7 @@ jobs:
           committer_email: horusec@zup.com.br
           message: "versioning:release - [skip ci] automatic commit updating versioning files"
 
+      # Create a GitHub release for the repository using mage.
       - name: Create github release
         run: mage-vscode CreateRelease
         env:
