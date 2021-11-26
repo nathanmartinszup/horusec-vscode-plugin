@@ -90,6 +90,7 @@ jobs:
           push: true
           signoff: true
           author_name: horusec
+          branch: ${{ steps.updated-version.outputs.nextReleaseBranchName }}
           author_email: horusec@zup.com.br
           committer_name: horusec
           committer_email: horusec@zup.com.br
@@ -112,7 +113,6 @@ jobs:
       # workflow is started from a branch that isn't the main branch, for example a release branch.
       # When the workflow it's triggered to run on main, the commit it's going to be made directly to the main branch.
       - name: Cherry pick
-        if: github.ref != 'refs/heads/main'
         id: cherry-pick
         run: mage-vscode CherryPick
 
@@ -120,7 +120,6 @@ jobs:
       # into the main branch. As the last commit, this also needs to run only when the release workflow is started from a
       # branch that isn't the main branch. Others workflows should be skipped cause of the skip ci in the pull request title.
       - name: Create Pull Request
-        if: github.ref != 'refs/heads/main'
         uses: repo-sync/pull-request@v2
         with:
           source_branch: "${{ steps.cherry-pick.outputs.cherryPickBranchName }}"
