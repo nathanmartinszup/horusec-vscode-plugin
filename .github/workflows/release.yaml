@@ -75,9 +75,9 @@ jobs:
       # Checkout into the release branch, if not exist create one.
       - name: Checkout Release Branch
         run: |
-          mage-vscode CheckoutReleaseBranch ${{ steps.updated-version.outputs.nextReleaseBranchName }}
-          sleep 5
-          git branch --set-upstream-to=origin/release/${{ steps.updated-version.outputs.nextReleaseBranchName }} release/${{ steps.updated-version.outputs.nextReleaseBranchName }}
+#          mage-vscode CheckoutReleaseBranch ${{ steps.updated-version.outputs.nextReleaseBranchName }}
+            git checkout -b ${{ steps.updated-version.outputs.nextReleaseBranchName }}
+            git push --set-upstream origin ${{ steps.updated-version.outputs.nextReleaseBranchName }}
 
       # This step updates the package.json to the new vs code plugin version, also updates the cli version passed
       # in for the input informed.
