@@ -76,7 +76,7 @@ jobs:
       - name: Checkout Release Branch
         run: |
           mage-vscode CheckoutReleaseBranch ${{ steps.updated-version.outputs.nextReleaseBranchName }}
-          git branch --set-upstream-to=origin/<branch> release/v2.10
+          git branch --set-upstream-to=origin/release/v2.10 release/v2.10
 
       # This step updates the package.json to the new vs code plugin version, also updates the cli version passed
       # in for the input informed.
