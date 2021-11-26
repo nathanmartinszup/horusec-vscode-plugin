@@ -74,6 +74,10 @@ jobs:
       - name: Checkout Release Branch
         run: mage-vscode CheckoutReleaseBranch ${{ steps.updated-version.outputs.nextReleaseBranchName }}
 
+      # Publish the release and tag using mage
+      - name: Push All
+        run: mage-vscode GitPushAll
+
       # This step updates the package.json to the new vs code plugin version, also updates the cli version passed
       # in for the input informed.
       - name: Update versioning files
@@ -104,9 +108,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.HORUSEC_PUSH_TOKEN }}
           HORUSEC_VSCODE_VERSION: ${{ steps.updated-version.outputs.nextReleaseVersion }}
 
-      # Publish the release and tag using mage
-      - name: Push All
-        run: mage-vscode GitPushAll
 
       # This step gets the sha of last commit made, witch is the updating versioning files commit, after that creates a
       # branch from the origin main and cherry pick this commit on it. This process need to occur only when the release
